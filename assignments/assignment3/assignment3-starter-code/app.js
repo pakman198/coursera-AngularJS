@@ -48,9 +48,8 @@
 				var matchedItems = []
 				
 				for(var i = 0; i < items.length; ++i){
-					//console.log(items[i]);
-					var description = items[i].description;
-					if( description.indexOf(searchTerm) != -1 ){
+					var description = items[i].description.toLowerCase();
+					if( description.indexOf(searchTerm.toLowerCase()) != -1 ){
 						matchedItems.push(items[i]);
 					}
 				}
