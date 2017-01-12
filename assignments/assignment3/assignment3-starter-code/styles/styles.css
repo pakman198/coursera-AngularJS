@@ -1,13 +1,21 @@
 h1 {
   margin-bottom: 30px;
 }
+.form{
+  margin-bottom: 25px;
+}
 input[type="text"] {
   width: 200px;
   float: left;
+  vertical-align: top;
 }
 .narrow-button {
   float: left;
   margin-left: 10px;
+  vertical-align: top;
+}
+.form-group{
+ margin-bottom: 0; 
 }
 .loader {
   display: none;
