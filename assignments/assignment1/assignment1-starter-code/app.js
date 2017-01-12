@@ -1,5 +1,5 @@
 (function(){
-	'use stric';
+	'use strict';
 	angular.module('FirstAssignment', [])
 	.controller('FirstAssignmentCtrl', myController);
 
