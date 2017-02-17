@@ -41,7 +41,11 @@
 			<div class="col-sm-12">
 
 				<loading-spinner></loading-spinner>
-				<ui-view></ui-view>
+				<div ng-controller="MenuAppController as menuCtrl">
+					<div ng-if="!menuCtrl.inTransition">
+						<ui-view></ui-view>
+					</div>
+				</div>
 
 
 			</div>
