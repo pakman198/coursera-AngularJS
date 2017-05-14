@@ -1,0 +1,43 @@
+<div class="container">
+	<div class="row">
+		<div class="col-sm-offset-3 col-sm-6" 
+			ng-if="myInfoCtrl.userInfo.is_stored">
+			<div class="user-card alert alert-warning">
+				<ul>
+					<div>
+						<strong>User: </strong>
+						<span>{{myInfoCtrl.userInfo.user.last_name}}, {{myInfoCtrl.userInfo.user.name}}</span>
+					</div>
+					<div>
+						<strong>Email: </strong>
+						<span>{{myInfoCtrl.userInfo.user.email}}</span>
+					</div>
+					<div>
+						<strong>Telephone: </strong>
+						<span>{{myInfoCtrl.userInfo.user.phone}}</span>
+					</div>
+					<br>
+					<div ng-if="myInfoCtrl.userInfo.user.menuItem">
+						<div class="media">
+							<div class="media-left">
+							<img ng-src="{{myInfoCtrl.basePath}}/images/{{myInfoCtrl.userInfo.menuItem.short_name}}.jpg" alt="" class="media-object">
+							</div>
+							<div class="media-body">
+								<h4 class="media-heading">Favorite dish:</h4>
+								<p>{{myInfoCtrl.userInfo.menuItem.name}}</p>
+							</div>
+						</div>
+					</div>
+				</ul>
+			</div>
+		</div>
+		<div class="col-sm-offset-3 col-sm-6" 
+			ng-if="!myInfoCtrl.userInfo.is_stored">
+			<div class="alert alert-info">
+			<h1>Not Signed Up Yet!</h1>
+			<br>
+			<p><a class="btn btn-primary btn-lg" ui-sref="public.signup" role="button">Sign up Now!</a></p>
+			</div>
+		</div>
+	</div>
+</div>

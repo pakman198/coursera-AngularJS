@@ -1,0 +1,56 @@
+<div class="container">
+	<div class="col-sm-6 col-sm-offset-3">
+		<h1>Sign Up</h1>
+		<form name="signupForm" novalidate>
+			<div class="form-group">
+				<label for="name">First Name:</label>
+				<input type="text" class="form-control" name="name"
+				ng-model="signupCtrl.user.name">
+			</div>
+			<div class="form-group">
+				<label for="last_name">Last Name:</label>
+				<input type="text" class="form-control" name="last_name"
+					ng-model="signupCtrl.user.last_name"
+					required>
+			</div>
+			<div class="form-group">
+				<label for="email">Email:</label>
+				<input type="email" class="form-control" name="email"
+					ng-model="signupCtrl.user.email"
+					required>
+			</div>
+			<div class="form-group">
+				<label for="phone">Phone Number:</label>
+				<input type="text" class="form-control" name="phone"
+					placeholder="123-456-7890"
+					pattern="(\d{3})(-| *)(\d{3})(-| *)(\d{4})"
+					ng-model="signupCtrl.user.phone"
+					required>
+			</div>
+			<div class="form-group">
+				<label for="menu">Menu Number:</label>
+				<span class="danger small" ng-if="!signupCtrl.valid_item">No such menu number exists</span>
+				<input type="text" class="form-control" name="menu"
+					ng-model="signupCtrl.user.menuItem"
+					ng-blur="signupCtrl.checkItem(signupCtrl.user.menuItem);">
+			</div>
+			<div class="form-group text-center">
+				<button class="btn btn-lg btn-primary" 
+					ng-disabled="signupForm.$invalid || signupCtrl.disabled"
+					ng-click="signupCtrl.submit(signupCtrl.user);">Sign Up</button>
+			</div>
+
+			<div class="alert alert-success" ng-if="signupCtrl.successMsg">
+				{{signupCtrl.successMsg}}
+			</div>
+
+			Form valid? {{ signupForm.$valid }}
+			<div id="info">
+			  First Name: {{ signupCtrl.user.name}} <br>
+			  Last Name: {{ signupCtrl.user.last_name}} <br>
+			  Email: {{ signupCtrl.user.email}} <br>
+			  Phone: {{ signupCtrl.user.phone }}
+			</div>
+		</form>
+	</div>
+</div>
